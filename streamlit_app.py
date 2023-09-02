@@ -1,9 +1,9 @@
-import joblib
+import pickle
 import streamlit as st
 
 
-job_in = open("decision_tree_classifier.sav", "rb")
-clf = joblib.load(job_in)
+job_in = open("dtree.pkl", "rb")
+clf = pickle.load(job_in)
 
 
 def predict_herb(l1):
