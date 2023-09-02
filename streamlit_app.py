@@ -1,9 +1,10 @@
+import pandas as pd
+import numpy as np
 import pickle
 import streamlit as st
 
-
-job_in = open("dtree.pkl", "rb")
-clf = pickle.load(job_in)
+pickle_in = open("dtree.pkl", "rb")
+clf = pickle.load(pickle_in)
 
 
 def predict_herb(l1):
@@ -33,7 +34,25 @@ def predict_herb(l1):
 
 
 st.title("HerbWise: Herbal Medicine Crystal Ball")
+html_temp = """
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                   
+                </head>
+                <body>
+                    <div class="container">
+                        <h2>HerbWise with Streamlit</h2>
+                    </div>
+                </body>
+                </html>
+            """
 
+
+st.markdown(html_temp, unsafe_allow_html=True)
 selected_option_1 = st.selectbox(
     "Symptom 1", ['Choose option', 'Immunity', 'Weight loss', 'Weight Gain', 'Teeth and bone Strength', 'Knee pain/arthritis', 'Blood detoxification', 'Infection and wounds', 'Body Pain', 'Skin disease', 'Inactiveness', 'Gastric&Intestine troubles', 'Hyperthermia or Fever',
                   'Diabetes', 'Cold, cough, throat infections', 'Vision concerns', 'Nerve disorder', 'PCOS', 'Headache', 'Respiratory concerns', 'Kidney & urinary problems', 'Heart problems', 'Constipation', 'Diarrhea', 'Liver', 'Male Reproductive concerns']
