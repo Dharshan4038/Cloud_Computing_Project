@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
+import sklearn
 
 pickle_in = open("dtree.pkl", "rb")
 clf = pickle.load(pickle_in)
