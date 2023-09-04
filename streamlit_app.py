@@ -85,4 +85,4 @@ if st.button("Predict"):
             listn.append(i)
     result = predict_herb(listn)
 
-st.success("The selected symptoms are: {}".format(result))
+st.success("The suggested medicine is: {}".format(result))
